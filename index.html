@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DO IT | Task Manager</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><span class="highlight">DO</span> IT</h1>
+            <p class="subtitle">Your Personal Task Manager</p>
+        </header>
+
+        <div class="add-task-container">
+            <form id="task-form">
+                <input type="text" id="task-input" placeholder="What do you need to do today?" autocomplete="off">
+                <button type="submit" id="add-task-btn">
+                    <i class="fas fa-plus"></i>
+                </button>
+            </form>
+        </div>
+
+        <div class="filters">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="pending">Pending</button>
+            <button class="filter-btn" data-filter="completed">Completed</button>
+        </div>
+
+        <div class="tasks-container">
+            <ul id="task-list">
+                <!-- Tasks will be added here dynamically -->
+            </ul>
+        </div>
+
+        <div class="tasks-summary">
+            <p id="tasks-count">0 tasks left</p>
+            <button id="clear-completed">Clear Completed</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>Created with <i class="fas fa-heart"></i> | Drag and drop to reorder</p>
+    </footer>
+
+    <template id="task-template">
+        <li class="task-item" draggable="true">
+            <div class="task-content">
+                <button class="complete-btn">
+                    <i class="fas fa-check"></i>
+                </button>
+                <p class="task-text"></p>
+            </div>
+            <button class="delete-btn">
+                <i class="fas fa-times"></i>
+            </button>
+        </li>
+    </template>
+
+    <script src="app.js"></script>
+</body>
+</html>
